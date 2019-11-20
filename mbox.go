@@ -172,7 +172,7 @@ func isspace(b byte) bool {
 // Observe, however, that CreateMboxStream() succeeding does not imply that it actually is a correctly formatted mbox file.
 func CreateMboxStream(s io.Reader) (m *MboxStream, err error) {
 	m = &MboxStream{
-		prefetch: make([]byte, 1000),
+		prefetch: make([]byte, 10000),
 		r:        bufio.NewReader(s),
 	}
 
